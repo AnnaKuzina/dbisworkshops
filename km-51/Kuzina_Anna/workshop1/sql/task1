@@ -1,0 +1,1 @@
+Insert into  USERS (ROLE_FK, USER_NAME, USER_EMAIL, USER_PASSWORD) values ('user','new_user','user3@gmail.com','new_user');
