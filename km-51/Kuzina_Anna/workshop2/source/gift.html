@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+ <h1>second table</h1>
+
+
+    <form action = "/api" method = "POST" id="form_second_table">
+        <p>gift_name<input type = "text" name = "gift_name" value="{{gift_result.get('gift_name')}}"/></p>
+        <p>gift_price<input type = "text" name = "gift_price" value="{{gift_result.get('gift_price')}}"/></p>
+        <p>gift_description<input type = "text" name = "gift_description" value="{{gift_result.get('gift_description')}}"/></p>
+     </form>
+
+    <button type="submit" form="form_second_table" name="action" value="update_gift">Submit</button>
+
+
+</body>
+</html>

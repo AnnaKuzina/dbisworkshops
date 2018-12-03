@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first_table</title>
+</head>
+<body>
+    <form action = "/api" method = "POST" id="form_first_table">
+         <p>user_name <input type = "text" name = "user_name" value="{{user_result.get('user_name')}}"/></p>
+         <p>user_age <input type = "text" name = "user_age" value="{{user_result.get('user_age')}}" /></p>
+     </form>
+
+    <button type="submit" form="form_first_table" name="action" value="update_user">Submit</button>
+</body>
+</html>
