@@ -1,0 +1,1 @@
+ UPDATE GIFT set GIFT_DESCRIPTION = 'Big ball' WHERE GIFT_ID = '1';
