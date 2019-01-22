@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ gift_name }}</h1>
+    <ul class="list-group">
+        {% for feature_name in feature_names_list %}
+            <li class="list-group-item">{{ feature_name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+

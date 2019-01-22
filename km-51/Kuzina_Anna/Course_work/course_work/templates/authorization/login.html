@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <title>Порада подарунків</title>
+</head>
+<body class="text-center">
+<br>
+<div class="jumbotron container">
+    <form action="/login" method="POST" class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Увійдіть у систему</h1>
+        {{ form.hidden_tag() }}
+        {% if problem %}
+            <div class="alert alert-danger" role="alert">
+                {{ problem }}
+            </div>
+        {% endif %}
+
+        {{ form.login(class="form-control", placeholder=form.login.label.text) }}
+        {{ form.password(class="form-control", placeholder=form.password.label.text) }}
+        {{ form.remember_me }} {{ form.remember_me.label }}
+        {{ form.submit(class="btn btn-primary btn-block") }}
+
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div>
+                    <strong>Помилка!</strong> {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <a href="/registration">Зареєструватися</a>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Обрати характеристики для подарунка</h1>
+    <form action=""  method="POST">
+        {{ form.hidden_tag() }}
+
+        {% if problem %}
+            <div class="alert alert-danger" role="alert">
+                {{ problem }}
+            </div>
+        {% endif %}
+
+        <br>
+        {{ form.gift_key.label.text }}
+        {{ form.gift_key(class="form-control", placeholder=form.gift_key.label.text)  }}
+        <br>
+        <p>{{ text }}</p>
+        {% for line in form %}
+            <div class="custom-control custom-checkbox">
+                {% if line.type == 'BooleanField' %}
+                    {{ line }} {{ line.label }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        {{ form.submit(class_="btn btn-lg btn-primary btn-block") }}
+
+
+        <hr>
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div>
+                    <strong>Помилка!</strong> {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </form>
+
+{% endblock %}

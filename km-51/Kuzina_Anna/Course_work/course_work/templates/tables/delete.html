@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Вдалити з таблиці {{ table_name }}</h1>
+    <form action={{ '/table/' + table_name + '/delete' }}  method="POST">
+        {{ form.hidden_tag() }}
+
+        {% if problem %}
+            <div class="alert alert-danger" role="alert">
+                {{ problem }}
+            </div>
+        {% endif %}
+
+
+        {{ form.name(class="form-control") }}
+        {{ form.submit(class="btn") }}
+        <hr>
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div>
+                    <strong>Помилка!</strong> {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </form>
+
+{% endblock %}

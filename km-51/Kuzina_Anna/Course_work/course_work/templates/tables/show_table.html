@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    {{ table|safe }}
+    <br>
+    <a class="btn btn-outline-success" href={{ '/table/' + table_name + '/add' }}>Додати</a>
+    {% if is_mutable %}
+        <a class="btn btn-outline-warning" href={{ '/table/' + table_name + '/update' }}>Змінити</a>
+    {% endif %}
+    <a class="btn btn-outline-danger" href={{ '/table/' + table_name + '/delete' }}>Видалити</a>
+
+{% endblock %}
+
